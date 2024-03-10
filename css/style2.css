@@ -43,3 +43,9 @@ body {
   .userflash {
     background-color: green;
   }
+
+  .score{
+    height: 300px;
+    width: 200px;
+    background-color: brown;
+  }
