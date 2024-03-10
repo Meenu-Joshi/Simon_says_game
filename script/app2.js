@@ -1,6 +1,7 @@
 
 let gameSequence=[];
 let userSequence=[];
+let scores=[];
 
 let btns=["green","red","yellow","blue"];
 
@@ -56,7 +57,9 @@ function btnFlash(btn){
         }    
     }
     else{
-            h3.innerText="Game Over! Press any to start";
+            h3.innerText=`Game Over! Press any to start.Your score is ${level} `;
+           
+           
            let b=document.querySelector("body");
            b.style.backgroundColor="red";
            console.log(b);
@@ -64,12 +67,33 @@ function btnFlash(btn){
             b.style.backgroundColor="black";
       
            },150);
+           displayScore(level);
+        
           
            reset();
           
        
     }  
-}        
+}  
+
+function displayScore(level){
+      
+           scores.push(level);
+           console.log("score",scores);
+           let highest=0;
+           
+           for(let score=0;score<=scores.length; score++){
+            
+            if(highest < scores[score]){
+                
+                highest=scores[score];
+                console.log("highest",highest);
+                
+            }
+}
+             let h3=document.querySelector("h3");
+                h3.innerText=highest;
+}
  
  function btnPress(){
   
